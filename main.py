@@ -4,6 +4,11 @@ import cv2
 import multiprocessing as mp
 from copy import deepcopy
 
+import pyarrow as pa
+import hdfs3
+
+from pyspark import SparkContext
+
 ## Functions to Aid on the Parallelization Task
 def gaussian_smoothing(input_img):
 								
@@ -230,6 +235,6 @@ def sequencialHoughAppliance ():
 
 
 
-
+sc = SparkContext('local[*]', 'pyspark tutorial')
 sequencialHoughAppliance()
 #parallelHoughAppliance();
