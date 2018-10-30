@@ -104,7 +104,7 @@ def HoughCircles(input,circles):
 
 
 # Foi mal o copypaste aqui negada..
-# Tomar cuidado com essa função.
+# Tomar cuidado com essa funcao.
 def applyHoughCircleNoFilter(imgFile, p2, minR, maxR):
 	# Get First Image
 	imagePath = os.path.join('images', imgFile)
