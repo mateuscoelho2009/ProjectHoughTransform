@@ -3,11 +3,7 @@ import os
 import cv2
 import multiprocessing as mp
 from copy import deepcopy
-
-import pyarrow as pa
-import hdfs3
-
-from pyspark import SparkContext
+import time
 
 ## Functions to Aid on the Parallelization Task
 def gaussian_smoothing(input_img):
@@ -230,11 +226,10 @@ def sequencialHoughAppliance ():
 	applyHoughCircleNoFilter ('MapRoundaboutView.jpg', 40, 0, 0)
 	applyHoughCircleNoFilter ('MapView.jpg', 17, 0, 10)
 
-#def parallelHoughAppliance ():
 
 
 
-
-sc = SparkContext('local[*]', 'pyspark tutorial')
+start = time.time()
 sequencialHoughAppliance()
-#parallelHoughAppliance();
+end = time.time()
+print(end-start)
